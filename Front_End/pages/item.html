@@ -179,7 +179,7 @@
         $("#tblItem").empty();
 
         $.ajax({
-            url: 'http://localhost:8080/Back_End/pages/item',
+            url: 'http://localhost:8080/ROA_POS/pages/item',
             success: function (res) {
                 console.log(res);
 
@@ -201,7 +201,7 @@
         console.log(formData)
 
         $.ajax({
-            url: 'http://localhost:8080/Back_End/pages/item',
+            url: 'http://localhost:8080/ROA_POS/pages/item',
             method: "post",
             data: formData,
             success: function (res) {
@@ -218,7 +218,7 @@
         let code = $("#txtItemCode").val();
 
         $.ajax({
-            url: 'http://localhost:8080/Back_End/pages/item?item-ID=' + code,
+            url: 'http://localhost:8080/ROA_POS/pages/item?item-ID=' + code,
             method: "delete",
             success: function (res) {
                 alert(res.message);
@@ -245,7 +245,7 @@
         }
 
         $.ajax({
-            url: 'http://localhost:8080/Back_End/pages/item',
+            url: 'http://localhost:8080/ROA_POS/pages/item',
             method: "put",
             contentType: "application/json",
             data:JSON.stringify(item),

@@ -181,7 +181,7 @@
     $("#customer_Id").append(`<option>-Select Customer-</option>`);
 
     $.ajax({
-        url: "http://localhost:8080/Back_End/pages/customer",
+        url: " http://localhost:8080/ROA_POS/pages/customer",
         method: "GET",
         success: function (res) {
             console.log(res);
@@ -203,7 +203,7 @@
     $("#itemCode").append(`<option>-Select Item-</option>`);
 
     $.ajax({
-        url: "http://localhost:8080/Back_End/pages/item",
+        url: "http://localhost:8080/ROA_POS/pages/item",
         method: "GET",
         success: function (res) {
             console.log(res);
@@ -222,7 +222,7 @@
 
     $("#customer_Id").click(function () {
         $.ajax({
-            url: "http://localhost:8080/Back_End/pages/customer",
+            url: "http://localhost:8080/ROA_POS/pages/customer",
             method: "GET",
             success: function (res) {
                 console.log(res);
@@ -248,7 +248,7 @@
 
     $("#itemCode").click(function () {
         $.ajax({
-            url: "http://localhost:8080/Back_End/pages/item",
+            url: "http://localhost:8080/ROA_POS/pages/item",
             method: "GET",
             success: function (res) {
                 console.log(res);
@@ -293,7 +293,7 @@
     function searchOrder() {
         let orderId = "";
         $.ajax({
-            url: "http://localhost:8080/Back_End/pages/purchase",
+            url: "http://localhost:8080/ROA_POS//pages/purchase",
             method: "GET",
             success: function (resp) {
                 orderId = resp.oid;
