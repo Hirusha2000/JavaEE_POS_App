@@ -22,7 +22,7 @@ public class ItemServletAPI extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaee_pos", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "1234");
             PreparedStatement pstm = connection.prepareStatement("select * from Item");
             ResultSet rst = pstm.executeQuery();
 
@@ -69,7 +69,7 @@ public class ItemServletAPI extends HttpServlet {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaee_pos", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "1234");
 
 
             PreparedStatement pstm = connection.prepareStatement("insert into Item values(?,?,?,?)");
@@ -107,7 +107,7 @@ public class ItemServletAPI extends HttpServlet {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaee_pos", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "1234");
 
             PreparedStatement pstm = connection.prepareStatement("delete from Item where code=?");
             pstm.setObject(1, code);
@@ -145,7 +145,7 @@ public class ItemServletAPI extends HttpServlet {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaee_pos", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "1234");
 
             PreparedStatement pstm3 = connection.prepareStatement("update Item set description=?,unitPrice=?,qty=? where code=?");
             pstm3.setObject(4, code);
