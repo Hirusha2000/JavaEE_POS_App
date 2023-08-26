@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/fontAwesome/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="../assets/img/logo.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
+                Smart<span class="text-danger">POS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="../index.html">Dashboard</a>
+                    <a class="nav-link active" aria-current="page"  href="#">Orders</a>
+                    <a class="nav-link" href="item.html">Items</a>
+                    <a class="nav-link" href="customer.html">Customers</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container-fluid" id="PlaceOrderSection">
+    <div class="container d-flex flex-grow-1 flex-column">
+        <div class="position-relative d-inline-block mt-3 mt-lg-4 mt-md-4">
+            <h2 style="font-family: 'Arial Narrow MT Bold',serif"><i class="fa-solid fa-cart-plus"></i> Place Orders
+            </h2>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-grow-1 flex-column shadow rounded-4" style="background-color: #dcdcdc">
+        <div class="row justify-content-around" style="height: max-content">
+
+            <div class="col-12 col-md-8 col-lg-4 p-3 mt-3 rounded-5" style="background-color: white">
+                <h4 class="text-center p-2 text-light rounded-3" style="background: rgba(38,131,255,0.8)">Invoice
+                    Details</h4>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="orderId">Order ID :</label>
+                        <input class="form-control border-dark" id="orderId" type="text">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label class="fw-bold" for="orderDate">Order Date :</label>
+                        <input class="form-control border-dark" id="orderDate" type="date">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="customer_Id">Customer ID :</label>
+                        <select aria-label="Default select example" class="form-select border-dark" id="customer_Id">
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="customer_Name">Customer Name :</label>
+                        <input class="form-control border-dark" id="customer_Name" type="text">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="customer_Address">Customer Address :</label>
+                        <input class="form-control border-dark" id="customer_Address" type="text">
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="customer_Salary">Customer Salary :</label>
+                        <input class="form-control border-dark" id="customer_Salary" type="number">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-4 p-3 mt-3 rounded-5" style="background-color: white">
+                <h4 class="text-center p-2 text-light rounded-3" style="background: rgba(38,131,255,0.8)">Item
+                    Details</h4>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="itemCode">Item Code :</label>
+                        <select aria-label="Default select example" class="form-select border-dark" id="itemCode">
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="item_Name">Item Name :</label>
+                        <input class="form-control border-dark" id="item_Name" type="text">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="unitPrice">Unit Price :</label>
+                        <input class="form-control border-dark" id="unitPrice" type="number">
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="qtyOnHand">Qty On Hand :</label>
+                        <input class="form-control border-dark" id="qtyOnHand" type="number">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-12">
+                        <label class="fw-bold" for="orderedQty">Ordered Qty :</label>
+                        <input class="form-control border-dark" id="orderedQty" type="number">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-3 p-3 mt-3 rounded-5" style="background-color: white">
+                <h4 class="text-center p-2 text-light rounded-3" style="background: rgba(38,131,255,0.8)">Payment
+                    Details</h4>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-12 col-lg-12">
+                        <label class="fw-bold" for="total">Total :</label>
+                        <input class="form-control border-dark" id="total" type="number">
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="subtotal">Sub Total :</label>
+                        <input class="form-control border-dark" id="subtotal" type="number">
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="discount">Discount :</label>
+                        <input class="form-control border-dark" id="discount" type="number">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="cash">Cash :</label>
+                        <input class="form-control border-dark" id="cash" type="number">
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <label class="fw-bold" for="balance">Balance :</label>
+                        <input class="form-control border-dark" id="balance" type="number">
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="d-grid gap-4 d-md-flex mt-lg-3 justify-content-md-center">
+                        <button class="btn btn-outline-warning rounded-2" type="submit" id="addToCart">Add To Cart
+                        </button>
+                        <button class="btn btn-outline-success rounded-2" type="submit" id="placeOrder">Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 mt-md-2 mt-lg-5 justify-content-around" style="height: 250px;">
+                <div class="col-10">
+                    <div class="customerTableDiv overflow-auto" style="height: 200px;">
+                        <table class="table table-bordered border-info table-primary">
+                            <thead class="table-info text-primary text-center ">
+                            <tr>
+                                <th scope="col">Item Code</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tblPlaceOrder" class="text-center"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="../assets/js/jquery-3.7.0.min.js"></script>
+
+
+<script>
+    setDates();
+    generateOrderID();
+
+    $("#customer_Id").empty();
+    $("#customer_Id").append(`<option>-Select Customer-</option>`);
+
+    $.ajax({
+        url: "http://localhost:8080/Back_End/pages/customer",
+        method: "GET",
+        success: function (res) {
+            console.log(res);
+
+            for (let customer of res) {
+                let id = customer.id;
+
+                $("#customer_Id").append(`<option>${id}</option>`);
+            }
+            console.log(res.message);
+        }, error: function (error) {
+            console.log(error.responseJSON.message);
+
+        }
+
+    });
+
+    $("#itemCode").empty();
+    $("#itemCode").append(`<option>-Select Item-</option>`);
+
+    $.ajax({
+        url: "http://localhost:8080/Back_End/pages/item",
+        method: "GET",
+        success: function (res) {
+            console.log(res);
+
+            for (let item of res) {
+                let code = item.code;
+
+                $("#itemCode").append(`<option>${code}</option>`);
+            }
+            console.log(res.message);
+        }, error: function (error) {
+            console.log(error.responseJSON.message);
+        }
+
+    });
+
+    $("#customer_Id").click(function () {
+        $.ajax({
+            url: "http://localhost:8080/Back_End/pages/customer",
+            method: "GET",
+            success: function (res) {
+                console.log(res);
+
+                let val = $("#customer_Id").val();
+
+                for (let i = 0; i < res.length; i++) {
+                    if (val == res[i].id) {
+                        $("#customer_Name").val(res[i].name)
+                        $("#customer_Address").val(res[i].address)
+                        $("#customer_Salary").val(res[i].salary)
+                    }
+                }
+
+                console.log(res.message);
+            }, error: function (error) {
+                console.log(error.responseJSON.message);
+
+            }
+
+        });
+    });
+
+    $("#itemCode").click(function () {
+        $.ajax({
+            url: "http://localhost:8080/Back_End/pages/item",
+            method: "GET",
+            success: function (res) {
+                console.log(res);
+
+                let val = $("#itemCode").val();
+
+                for (let i = 0; i < res.length; i++) {
+                    if (val == res[i].code) {
+                        $("#item_Name").val(res[i].description)
+                        $("#unitPrice").val(res[i].unitPrice)
+                        $("#qtyOnHand").val(res[i].qty)
+                    }
+                }
+
+                console.log(res.message);
+            }, error: function (error) {
+                console.log(error.responseJSON.message);
+
+            }
+
+        });
+    });
+
+    function setDates() {
+        let date = new Date().toJSON().split("T")[0];
+        $("#orderDate").val(date);
+    }
+
+    function generateOrderID() {
+        $("#orderId").val("ORD-001");
+        let res = searchOrder();
+
+        let tempId = parseInt(res.split("-")[1]);
+        tempId = tempId + 1;
+        if (tempId <= 9) {
+            $("#orderId").val("ORD-00" + tempId);
+        } else if (tempId <= 99) {
+            $("#orderId").val("ORD-0" + tempId);
+        }
+    }
+
+    function searchOrder() {
+        let orderId = "";
+        $.ajax({
+            url: "http://localhost:8080/Back_End/pages/purchase",
+            method: "GET",
+            success: function (resp) {
+                orderId = resp.oid;
+            }
+        });
+        return orderId;
+    }
+
+
+</script>
+
+</body>
+</html>
