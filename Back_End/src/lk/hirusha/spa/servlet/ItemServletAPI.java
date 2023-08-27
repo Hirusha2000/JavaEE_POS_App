@@ -4,7 +4,7 @@
  * created :8/26/2023--11:51 AM
  **/
 
-package lk.hirusha.servlet;
+package lk.hirusha.spa.servlet;
 
 import javax.json.*;
 import javax.servlet.ServletException;
